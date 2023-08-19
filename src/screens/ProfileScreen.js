@@ -5,7 +5,9 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { useNavigation } from '@react-navigation/native';
 
 // icons
-import { UserIcon, EnvelopeIcon, ArrowLeftIcon } from 'react-native-heroicons/outline'
+import { UserIcon, EnvelopeIcon, ArrowLeftIcon ,PlusCircleIcon} from 'react-native-heroicons/outline'
+
+
 
 import { useAuthProvider } from '../context/AuthContext';
 
@@ -108,7 +110,8 @@ export default function ProfileScreen(props) {
             </View>
 
             {/* avatar placement */}
-            <View className="flex flex-col justify-center items-center mb-6">
+            <View className=" flex flex-col justify-center items-center mb-6">
+                <View className="relative">
                 {
                     userData.photoURL
                         ? <Image
@@ -129,7 +132,18 @@ export default function ProfileScreen(props) {
                         />
                 }
 
+                <TouchableOpacity className="absolute bottom-0 right-0 bg-white rounded-full">
+                <PlusCircleIcon
+                            size={wp(8)}
+                            color={theme.text}
+                            strokeWidth={2}
+                        />
+                </TouchableOpacity>
 
+
+                </View>
+                
+         
 
                 <Text
                     style={{ fontSize: wp(4), color: theme.text }}>
@@ -185,6 +199,8 @@ export default function ProfileScreen(props) {
                     </View>
                 </View>
             </ScrollView>
+
+         
 
         </View>
     )

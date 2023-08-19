@@ -4,7 +4,7 @@ import React, {
     useLayoutEffect,
     useCallback
 } from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import { TouchableOpacity, Text, View, Image } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 import {
     collection,
@@ -21,36 +21,66 @@ import { ArrowLeftIcon, CogIcon } from 'react-native-heroicons/outline'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { theme } from '../theme';
+const defaultAvatar = require('../../assets/images/Default.png');
 
 
 export default function Chat(props) {
     const [messages, setMessages] = useState([]);
     const navigation = useNavigation();
 
-    const {id, name} = props.route.params
+    const { id, name, roomImage } = props.route.params
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: name ,
+            title: "",
             titleVisible: false,
             headerStyle: { backgroundColor: "white" },
             headerTitleStyle: { color: theme.text },
             headerTintColor: "black",
             headerLeft: () => {
                 return (
-
                     <TouchableOpacity
-                    
-                    onPress={()=> navigation.goBack()}
-                    style={{ marginLeft: 10}}>
+                        onPress={() => navigation.goBack()}
+                    >
 
-                       <ArrowLeftIcon
-                        size={wp(8)}
-                        color={theme.text}
-                        strokeWidth={2}
-                       />
+                        <View
+                            style={{ marginLeft: 15, }}
+                            className="flex flex-row justify-cneter items-center gap-2 ">
+                            <ArrowLeftIcon
+                                size={wp(8)}
+                                color={theme.text}
+                                strokeWidth={2}
+                            />
 
+                            {
+                                roomImage ? <Image
+                                    className="rounded-full"
+                                    source={{ uri: roomImage }}
+                                    style={{
+                                        width: 38,
+                                        height: 38,
+                                    }}
+                                /> :
+                                    <Image
+                                        className="rounded-full"
+                                        source={defaultAvatar}
+                                        style={{
+                                            width: 38,
+                                            height: 38,
+                                        }}
+                                    />
+                            }
+
+
+                            <Text
+                                style={{ color: theme.text }}
+                                className="font-bold text-lg">
+                                {name}
+                            </Text>
+                        </View>
                     </TouchableOpacity>
+
+
                 )
 
 
@@ -60,15 +90,15 @@ export default function Chat(props) {
                     style={{
                         marginRight: 10
                     }}
-                    onPress={()=>navigation.navigate("back")}
+                    onPress={() => navigation.navigate("back")}
                 >
                     <CogIcon
-                      
+
                         size={wp(8)}
                         color={theme.text}
                         strokeWidth={2}
-                       
-                    
+
+
                     />
 
                 </TouchableOpacity>
@@ -124,7 +154,7 @@ export default function Chat(props) {
             }}
             user={{
                 _id: auth?.currentUser?.email,
-                avatar: 'https://i.pravatar.cc/300'
+                avatar: auth?.currentUser?.photoURL
             }}
         />
 

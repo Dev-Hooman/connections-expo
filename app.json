@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "chat",
-    "slug": "chat",
+    "name": "connections",
+    "slug": "connections",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app/icon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/app/splash.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

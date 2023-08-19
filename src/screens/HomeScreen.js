@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, TouchableOpacity, Text, Image, StyleSheet, Alert, TextInput, ScrollView, StatusBar } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { theme } from "../theme";
-import { MagnifyingGlassIcon, ChatBubbleBottomCenterTextIcon, ArrowLeftOnRectangleIcon } from 'react-native-heroicons/outline'
+import { MagnifyingGlassIcon, ChatBubbleBottomCenterTextIcon, ArrowLeftOnRectangleIcon, XCircleIcon } from 'react-native-heroicons/outline'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 // context import
@@ -135,21 +135,29 @@ const HomeScreen = () => {
 
             {/* Search bar */}
             <View className="mx-5 mb-4 mt-6">
-                <Text style={{ color: theme.text }} className="text-3xl font-bold ">Welcome to Chats!</Text>
+                <Text style={{ color: theme.text }} className="text-2xl font-bold ">Welcome to Connections!</Text>
             </View>
 
             <View className="mx-5 mb-4 mt-6">
                 <View
-                    className="flex-row items-center bg-white rounded-full space-x-2 pl-6">
+                    className="flex-row items-center bg-white rounded-full space-x-2 pl-6 pr-4">
                     <MagnifyingGlassIcon size={20} strokeWidth={3} color={theme.text} />
                     <TextInput
                         style={{ color: theme.text }}
                         placeholder='Search Rooms'
                         placeholderTextColor="gray"
-                        className="flex-1 text-base mb-1 h-12 pl-1 tracking-wider"
+                        className="flex-1 text-base mb-1 h-12 pl-1 tracking-wider "
                         value={search}
                         onChangeText={(text) => setSearch(text)}
                     />
+                    {
+                        search.length > 0
+                            ? (<TouchableOpacity onPress={() => { setSearch("") }}>
+                                <XCircleIcon className="pr-6" size={20} strokeWidth={3} color={theme.text} />
+                            </TouchableOpacity>)
+                            : null
+                    }
+
                 </View>
             </View>
 
@@ -163,7 +171,7 @@ const HomeScreen = () => {
                             marginTop: 20,
                         }}>No Rooms found.</Text>
                     ) : (
-                        filteredRooms.map(({ name, _id, createdAt, roomImage },index) => (
+                        filteredRooms.map(({ name, _id, createdAt, roomImage }, index) => (
                             <CustomListItem
                                 key={_id}
                                 name={name}
