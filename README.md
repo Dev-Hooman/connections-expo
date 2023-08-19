@@ -9,7 +9,8 @@ Connecction is a Messaging App in which users can engage with each other.
 Connections" is a dynamic and user-friendly chat application designed to foster meaningful interactions and build connections among users from all walks of life. Whether you're looking to connect with friends, family, colleagues, or like-minded individuals, "Connections" offers a seamless platform to create chat rooms based on specific interests, topics, or events.
 
 ## Application Preview
-![App Preview ](https://github.com/Dev-Hooman/connections/assets/80707427/338d214b-c10e-47fa-9c54-40135b78cd16)
+<img width="3000" alt="App Show" src="https://github.com/Dev-Hooman/connections/assets/80707427/592b90e6-baa0-4272-ae4e-b83b72da2c37">
+
 
 ## Features
 
