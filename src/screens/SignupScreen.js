@@ -37,7 +37,7 @@ export default function SignupScreen({ navigation }) {
         .then((userCredential) => {
           return updateProfile(userCredential.user, {
             displayName: username,
-            photoURL: null
+            photoURL: "https://avatars.githubusercontent.com/u/80707427?v=4"
           });
         })
         .then(() => {
