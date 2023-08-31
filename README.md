@@ -1,7 +1,7 @@
-# Connections - React Native App 
+## Connections - React Native App 
 
 <img src="https://github.com/Dev-Hooman/connections/assets/80707427/f338436d-4519-4688-abf9-22afb9920513" align="left"
-width="200" hspace="10" vspace="10">
+width="200" hspace="10" vspace="10"/>
 
 Connecction is a Messaging App in which users can engage with each other.  
 
@@ -9,7 +9,7 @@ Connecction is a Messaging App in which users can engage with each other.
 Connections" is a dynamic and user-friendly chat application designed to foster meaningful interactions and build connections among users from all walks of life. Whether you're looking to connect with friends, family, colleagues, or like-minded individuals, "Connections" offers a seamless platform to create chat rooms based on specific interests, topics, or events.
 
 ## Application Preview
-<img width="3000" alt="App Show" src="https://github.com/Dev-Hooman/connections/assets/80707427/592b90e6-baa0-4272-ae4e-b83b72da2c37">
+<img width="3000" alt="App Show" src="https://github.com/Dev-Hooman/connections/assets/80707427/592b90e6-baa0-4272-ae4e-b83b72da2c37"/>
 
 
 ## Features
